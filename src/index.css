@@ -1,0 +1,272 @@
+/* =========================
+   GLOBAL RESET & TOKENS
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #f9fafb;
+  --bg-dark: #0f172a;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.15);
+  --radius: 14px;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* =========================
+   NAVBAR (HEADER)
+========================= */
+
+.nav {
+  background: var(--bg-dark);
+  color: white;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.nav a {
+  color: #cbd5f5;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: white;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background: var(--bg-dark);
+  color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+.footer-links {
+  margin-top: 10px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+.footer-links a {
+  color: #cbd5f5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.hero {
+  background: linear-gradient(
+    135deg,
+    #1e293b,
+    #0f172a
+  );
+  color: white;
+  padding: 70px 30px;
+  border-radius: var(--radius);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #cbd5f5;
+}
+
+/* =========================
+   BLOG CARD
+========================= */
+
+.card {
+  background: var(--bg-card);
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.card small {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.card a {
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* =========================
+   BLOG DETAILS
+========================= */
+.container{
+  height:100vh;
+}
+
+.container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.container p {
+  margin-bottom: 14px;
+}
+
+/* =========================
+   FORMS (CREATE / EDIT)
+========================= */
+
+.container input,
+.container textarea,
+.container select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  background: #ffffff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.container input:focus,
+.container textarea:focus,
+.container select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.container button {
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+.container button + button {
+  margin-left: 10px;
+  background: #dc2626;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.container ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.container li {
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+}
