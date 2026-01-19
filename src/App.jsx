@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { initializeSampleBlogs } from "./utils/localStorage";
 
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
@@ -12,10 +10,6 @@ import EditBlog from "./pages/EditBlog";
 import About from "./pages/About";
 
 function App() {
-  useEffect(() => {
-    // Initialize sample blogs on first load
-    initializeSampleBlogs();
-  }, []);
 
   return (
     <>
