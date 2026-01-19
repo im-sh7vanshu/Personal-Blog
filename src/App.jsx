@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { clearBlogs } from "./utils/localStorage";
 
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
@@ -10,6 +12,10 @@ import EditBlog from "./pages/EditBlog";
 import About from "./pages/About";
 
 function App() {
+  useEffect(() => {
+    // Clear old sample blogs data on app load
+    clearBlogs();
+  }, []);
 
   return (
     <>
