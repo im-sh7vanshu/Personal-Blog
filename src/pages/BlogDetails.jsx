@@ -10,11 +10,14 @@ function BlogDetails() {
   return (
     <div className="container">
       <h1>{blog.title}</h1>
+      {blog.image && <img src={blog.image} alt={blog.title} className="blog-detail-image" />}
       <p>{blog.content}</p>
       <p><b>Category:</b> {blog.category}</p>
-      <Link to={`/edit/${blog.id}`}>Edit</Link>
-      <br />
-      <Link to="/blogs">Back</Link>
+      <p><b>Date:</b> {blog.date}</p>
+      <div className="blog-actions">
+        <Link to={`/edit/${blog.id}`} className="btn-edit">Edit</Link>
+        <Link to="/blogs" className="btn-back">← Back</Link>
+      </div>
     </div>
   );
 }

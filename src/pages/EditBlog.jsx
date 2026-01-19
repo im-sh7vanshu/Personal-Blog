@@ -20,8 +20,10 @@ function EditBlog() {
   };
 
   const deleteBlog = () => {
-    saveBlogs(blogs.filter(b => b.id !== id));
-    navigate("/blogs");
+    if (window.confirm("Are you sure you want to delete this blog?")) {
+      saveBlogs(blogs.filter(b => b.id !== id));
+      navigate("/blogs");
+    }
   };
 
   return (
@@ -29,8 +31,10 @@ function EditBlog() {
       <h1>Edit Blog</h1>
       <input value={title} onChange={e => setTitle(e.target.value)} />
       <textarea value={content} onChange={e => setContent(e.target.value)} />
-      <button onClick={updateBlog}>Update</button>
-      <button onClick={deleteBlog}>Delete</button>
+      <div className="button-group">
+        <button onClick={updateBlog} className="btn-primary">Update</button>
+        <button onClick={deleteBlog} className="btn-danger">Delete</button>
+      </div>
     </div>
   );
 }
